@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+        function opr(a, b, func) {
+            console.log(func(a, b));
+
+        }
+        opr(4, 56, add)
+
+
+        function operr(a, b, funcc) {
+            console.log(funcc(a, b))
+        }
+        operr(5, 7, (a, b) => {
+            return a * b;
+        }
+        )
+       
+         
+
+    </script>
+</body>
+
+</html>

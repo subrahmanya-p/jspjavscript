@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Example</title>
+</head>
+
+<body>
+    <script>
+        function counter() {
+            let count = 0;
+            function increment() {
+                count++;
+                return count
+
+            }
+            return increment
+        }
+        // for (let i = 0; i <= 1000000; i++) {
+        //     console.log(counter()());
+
+        // }
+        let res = counter();
+        console.log(res());
+
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+```
