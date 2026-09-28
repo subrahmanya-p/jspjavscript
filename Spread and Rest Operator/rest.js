@@ -20,4 +20,3 @@ console.log("--------------");
 let { name,age,salary,...data }=obj;
 console.log(name);
 console.log(data);
-

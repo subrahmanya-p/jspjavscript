@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="r">Subrahmyaaaa</h1>
+    <script>
+
+        let generateColor = () => {
+
+            let colorarr = '0123456789ABCDEF'.split("");
+            return `#${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}`
+        }
+
+        setInterval(() => {
+            document.getElementById('r').style.color = generateColor();
+            document.body.style.backgroundColor = generateColor();
+        }, 0);
+    </script>
+
+</body>
+
+</html>

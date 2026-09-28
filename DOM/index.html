@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    </style>
+</head>
+
+<body>
+    <h1 class="ran">Welcome to DOM 1</h1>
+    <h1 class="cls">Welcome to DOM 2</h1>
+    <h1 class="cls">Welcome to DOM 3</h1>
+    <h1 class="ran">Welcome to DOM 4</h1>
+    <h1 class="cls">Welcome to DOM 5</h1>
+    <button onclick="Change()">click Me</button>
+    <button onclick="random()">random</button>
+
+    <script>
+        let Change = () => {
+            let arrs = document.getElementsByClassName("cls")
+            //   for (let index = 0; index < arrs.length; index++) {
+            //    arrs[index].style.color="red";
+            //    arrs[index].style.backgroundColor="blue"
+
+            //   }
+            // arrs.forEach(element => {
+            //   element.style.color="red";
+
+            // });
+            for (let element of arrs) {
+                element.style.color = "red";
+                console.log(element);
+
+
+            }
+
+        }
+        let random=()=>{
+            let arrs = document.getElementsByClassName("ran")
+            for (let element of arrs) {
+                element.style.color = "blue";
+                console.log(element);
+
+
+            }
+
+            
+
+        }
+
+    </script>
+</body>
+
+</html>

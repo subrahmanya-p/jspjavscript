@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="r">Subrahmyaaaa</h1>
+    <script>
+        function randomcolor() {
+            let r = Math.floor(Math.random() * 225);
+            let g = Math.floor(Math.random() * 225);
+            let b = Math.floor(Math.random() * 225);
+            let color = `rgb(${r} ${g} ${b})`
+            return color;
+
+        }
+
+        setInterval(() => {
+            console.log(randomcolor());
+            document.getElementById('r').style.color=randomcolor();
+            document.body.style.backgroundColor = randomcolor();
+        },)
+
+
+        function returnNum(color) {
+
+        }
+        returnNum(color);
+
+
+    </script>
+</body>
+
+</html>

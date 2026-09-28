@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="dark()">dark</button>
+    <button onclick="white()">White</button>
+    <button onclick="random()">random</button>
+    <script>
+        let dark = () => {
+            document.body.style.backgroundColor = 'black'
+
+        }
+        let white = () => {
+            document.body.style.backgroundColor = 'white'
+
+        }
+        let random = () => {
+            let generateColor = () => {
+
+                let colorarr = '0123456789ABCDEF'.split("");
+                return `#${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}${colorarr[Math.trunc(Math.random() * 16)]}`
+            }
+            document.body.style.backgroundColor = generateColor();
+
+        }
+    </script>
+</body>
+
+</html>

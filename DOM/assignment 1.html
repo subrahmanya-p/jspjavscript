@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="cls">1st tag</h1>
+    <h1 class="cls"> 2ns Tag</h1>
+    <h1 class="cls">3rd tag</h1>
+    <script>
+        ///it will not keep track of the element 
+        //     let h1tags=document.querySelectorAll(".cls")
+        // console.log(h1tags.length);
+
+        // let newh1tag= document.createElement("h1")
+        // newh1tag.innerText="Hello Subrahmnyaaa!"
+        // newh1tag.className="cls"
+
+        // document.body.append(newh1tag)
+
+        // console.log(h1tags.length);
+
+        //it will keep the track of element
+
+
+        let h1tags = document.getElementsByClassName("cls")
+        console.log(h1tags.length);
+
+        let newh1tag = document.createElement("h1")
+        newh1tag.innerText = "Hello Subrahmnyaaa!"
+        newh1tag.className = "cls"
+
+        document.body.append(newh1tag)
+
+        console.log(h1tags.length);
+    </script>
+</body>
+
+</html>
