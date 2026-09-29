@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bb{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let olddiv = document.createElement("h1")
+        olddiv.innerText = "Hello Subrahmyaa";
+        document.body.append(olddiv)
+        let newdiv = document.createElement("h1")
+        newdiv.innerText = "Hello Subrahmy!!!!!!!!!!!!aa";
+        document.body.append(newdiv)
+        // newdiv.remove()
+        // olddiv.replaceWith(newdiv)
+        document.body.replaceChild(newdiv, olddiv)
+        // document.body.removeChild(olddiv)
+        // newdiv.setAttribute("id","bb")
+        // document.body.append(newdiv.getAttribute("id"))
+
+        newdiv.style.setProperty("color","black")
+
+        newdiv.style.getPropertyValue("color")
+         document.body.append(newdiv.style.getPropertyValue("color"))
+
+
+
+
+
+    </script>
+</body>
+
+</html>
