@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #bb{
+        #bb {
             color: red;
         }
     </style>
@@ -15,22 +15,23 @@
 <body>
     <script>
         let olddiv = document.createElement("h1")
-        olddiv.innerText = "Hello Subrahmyaa";
+        olddiv.innerHTML = "<strik>Hello Subrahmyaa </strike>";
         document.body.append(olddiv)
         let newdiv = document.createElement("h1")
         newdiv.innerText = "Hello Subrahmy!!!!!!!!!!!!aa";
         document.body.append(newdiv)
         // newdiv.remove()
         // olddiv.replaceWith(newdiv)
-        document.body.replaceChild(newdiv, olddiv)
+        // document.body.replaceChild(newdiv, olddiv)
         // document.body.removeChild(olddiv)
-        // newdiv.setAttribute("id","bb")
-        // document.body.append(newdiv.getAttribute("id"))
+        newdiv.setAttribute("id","bb")
+    
 
-        newdiv.style.setProperty("color","black")
+        newdiv.style.setProperty("color", "blue")
 
-        newdiv.style.getPropertyValue("color")
-         document.body.append(newdiv.style.getPropertyValue("color"))
+        let clrr = newdiv.style.getPropertyValue("color")
+        document.body.append(clrr)
+        document.body.append(newdiv.style.getPropertyValue("color"))
 
 
 

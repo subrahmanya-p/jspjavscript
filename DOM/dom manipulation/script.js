@@ -18,7 +18,6 @@
         section.appendChild(asidetag)
         section.appendChild(anotheraside)
 
-        ///
         let article = document.createElement("article")
         article.innerText = "hello my name is subrahmanyaa"
         outerdiv.appendChild(article)
