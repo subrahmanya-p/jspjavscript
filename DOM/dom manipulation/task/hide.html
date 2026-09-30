@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+    <input type="text" oninput="handleOnChange(event)" id="input">
+    <i onclick="change()" id="eye" class="fa-solid fa-eye-slash"></i>
+    <script>
+        let data = "";
+        let isopen=false
+        let input=document.getElementById("input")
+        let eye=document.getElementById("eye")
+
+        function handleOnChange(e) {
+            data = e.target.value;
+        }
+        let change = () => {
+
+            if (isopen) {
+                eye.className = "fa-solid fa-eye-slash";
+                input.value = "*".repeat(data.length);
+                isopen = false;
+            } else {
+                input.value = data;
+                eye.className = "fa-regular fa-eye";
+                isopen = true;
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+
+            border-radius: 50%;
+            border-top: 10px solid red;
+            /* border-bottom-color: aqua;
+            border-left-color: rgb(230, 0, 255);
+            border-right-color: rgb(34, 0, 226);
+            border-top-color: green; */
+            animation-name: load;
+            animation-iteration-count: infinite;
+            /* animation-timing-function: ease; */
+            animation-duration:1000ms;
+            /* animation-direction: normal; */
+            
+        }
+        @keyframes load {
+          0%{
+            transform: rotate(90deg);
+          }  
+         
+            100%{
+             transform: rotate(360deg);
+          }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>
