@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .btn {
+cursor: pointer;
+
+            border: 2px solid red;
+            /* border-radius: ; */
+            font-size: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .container {
+            height: 400px;
+            width: 300px;
+            justify-content: center;
+            background-color: antiquewhite;
+            display: grid;
+            grid-template-columns: 23% 23% 23% 23%;
+            gap: 2%;
+
+            grid-template-rows: 18% 18% 18% 18% 18%;
+            grid-template-areas: "dis dis dis dis"
+
+                "one two three four"
+                "five six  seven eight"
+                "nine zero plus minus"
+                "multiply divide  decimal equal"
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="grid-area: dis;" id="dis" class="btn  dis"></div>
+        <div onclick="one()" style="grid-area: one;" id="one" class="btn btn1">1</div>
+        <div onclick="two()" style="grid-area: two;" class="btn">2</div>
+        <div onclick="three()" style="grid-area: three;" class="btn">3</div>
+        <div onclick=" four()" style="grid-area: four;" class="btn">4</div>
+        <div onclick="five()" style="grid-area: five;" class="btn">5</div>
+        <div onclick="six()" style="grid-area: six;" class="btn">6</div>
+        <div onclick="seven()" style="grid-area: seven;" class="btn">7</div>
+        <div onclick="eight()" style="grid-area: eight;" class="btn">8</div>
+        <div onclick="nine()" style="grid-area: nine;" class="btn">9</div>
+        <div onclick="zero()" style="grid-area: zero;" class="btn">0</div>
+        <div onclick="add()" style="grid-area: plus;" class="btn">+</div>
+        <div onclick="" style="grid-area: minus;" class="btn">-</div>
+        <div onclick="" style="grid-area: multiply;" class="btn">*</div>
+        <div onclick="" style="grid-area: divide;" class="btn">/</div>
+        <div onclick="" style="grid-area: decimal;" class="btn">.</div>
+        <div onclick="equal()" style="grid-area: equal;" class="btn">=</div>
+    </div>
+    <script>
+
+        let display = document.getElementById("dis")
+        display.innerText = 0
+
+        function one() {
+            display.innerText = 1
+
+
+        }
+        function two() {
+            display.innerText = display.innerText + 2
+
+
+        }
+        function three() {
+            display.innerText = display.innerText + 3
+
+
+        }
+        function four() {
+            display.innerText = display.innerText + 4
+
+
+        }
+         function five() {
+            display.innerText = display.innerText + 5
+
+
+        }
+        function six() {
+            display.innerText = display.innerText + 6
+
+
+        }
+        function seven() {
+            display.innerText = display.innerText + 7
+
+
+        }
+        function eight() {
+            display.innerText = display.innerText + 8
+
+        }
+
+        function nine() {
+            display.innerText = display.innerText + 9
+        }
+    function  zero() {
+            display.innerText =display.innerText + 0
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

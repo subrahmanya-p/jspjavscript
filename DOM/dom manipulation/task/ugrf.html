@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dd {
+            height: 59px;
+            width: 59px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="btn">Click Mee </div>
+    <div id="dd"></div>
+    <script>
+        let dd = document.getElementById("dd")
+
+        dd.addEventListener("mouseover", () => {
+            dd.style.backgroundColor = "red"
+
+        })
+        dd.addEventListener("mouseout", () => {
+            dd.style.backgroundColor = "blue"
+
+        })
+
+
+        ///
+        let btn = document.getElementById("btn")
+        btn.onmouseover = (e) => {
+            btn.style.color = "red"
+        }
+        btn.onmouseout = () => {
+            btn.style.color = "blue"
+        }
+
+    </script>
+</body>
+
+</html>
