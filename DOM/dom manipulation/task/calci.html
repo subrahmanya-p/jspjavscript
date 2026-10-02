@@ -36,7 +36,7 @@
 
         h1 {
             margin-top: 25px;
-            color:green;
+            color: green;
         }
     </style>
 </head>
@@ -54,10 +54,21 @@
     <button onclick="mul()">Multiply</button>
     <button onclick="div()">Division</button>
 
+    <button onclick="ss()">Clear</button>
     <h1 id="h1"></h1>
 
     <script>
         let res = document.getElementById("h1");
+        document.getElementById("second").value = 0;
+        document.getElementById("first").value = 0;
+        function ss() {
+
+
+            let first = Number(document.getElementById("first").value);
+            let second = Number(document.getElementById("second").value);
+            document.getElementById("second").value = 0;
+            document.getElementById("first").value = 0;
+        }
 
         function add() {
             let first = Number(document.getElementById("first").value);
@@ -86,7 +97,7 @@
 
             if (second == 0) {
                 res.innerText = "Cannot divide by zero";
-                res.style.color="red"
+                res.style.color = "red"
                 return;
             }
 
