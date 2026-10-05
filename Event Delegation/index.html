@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        section {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            position: absolute;
+        }
+
+        aside {
+            height: 50%;
+            width: 50%;
+            background-color: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div {
+            height: 50%;
+            width: 50%;
+            background-color: rgb(0, 255, 85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" name id fff">
+
+    </div>
+    <section id="section">
+        <aside class="one">
+            <div></div>
+        </aside>
+    </section>
+    <script>
+        // let section = document.getElementById("section")
+        // document.body.addEventListener("mouseover", (e) => {
+
+        //     section.style.top = `${e.clientX}px`;
+        //     section.style.left = `${e.clientY}px`;
+
+        // })
+
+
+
+        section.addEventListener("mouseover", (e) => {
+            if (e.target.id === "section") {
+                alert("Hello my name is id and im red");
+
+            }
+            else if (e.target.className === "one") {
+                alert("Heyy my name is class and im yellow")
+            }
+
+            else if (e.target.tagName === "DIV") {
+                alert("hey im tagname and my color is green")
+            }
+        })
+
+    </script>
+</body>
+
+</html>

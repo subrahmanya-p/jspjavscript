@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+     body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+    #msg{
+        height: 50px;
+        width:200px ;
+        background-color: rgb(170, 191, 191);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        /* display: ; */
+    }
+     #msg button{
+        height: 50%;
+        width: 40%;
+        font-size: 20px;
+        margin-right: 2px;
+         /* text-align: center; */
+     }
+     .one{
+        display: none;
+     }
+    
+
+</style>
+</head>
+<body>
+    <div id="msg">
+ <button>
+    ok
+ </button>
+</div>
+
+<button id="click">Click</button>
+    <script>
+         let btn1= document.getElementById("click");
+         let msg = document.getElementById("msg")
+         btn1.addEventListener("click",()=>{
+            msg.classList.toggle("one")
+            
+
+         })
+
+
+
+
+    </script>
+</body>
+</html>
