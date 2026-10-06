@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cont {
+            height: 50px;
+            width: 250px;
+            background-color: red;
+            justify-content: space-evenly;
+            align-items: center;
+            justify-items: center;
+            display: flex;
+            position: absolute;
+            top: -50px;
+            color: white;
+            font-size: medium;
+            transition: all 1s ease;
+
+            border-radius: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            left: 43%;
+
+        }
+
+        .come {
+
+            top: 9%;
+
+        }
+
+
+        #ok {
+            cursor: pointer;
+            padding: 1% 7%;
+            background-color: white;
+            color: red;
+            border-radius: 10px;
+            font-size: medium;
+            /* border-radius: 2%; */
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: none;
+
+
+        }
+
+        #click {
+            cursor: pointer;
+            padding: 10px 50px;
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            font-size: medium;
+            /* border-radius: 2%; */
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con" class="cont">
+        <p id="otp"></p>
+        <button id="ok">OK</button>
+
+    </div>
+    <button id="click">click Me !</button>
+    <script>
+
+        function generateOPt() {
+            return Math.trunc(1000 + Math.random() * 9000)
+        }
+        let p = document.getElementById("otp")
+        let con = document.getElementById("con")
+        document.getElementById("click").addEventListener("click", () => {
+            console.log("done");
+            p.innerText = `Your Otp is : ${generateOPt()}`;
+
+
+            con.classList.add("come")
+            setTimeout(() => {
+
+                con.classList.remove("come")
+
+            }, 5000)
+
+
+        })
+        document.getElementById("ok").addEventListener("click", () => {
+            console.log("done");
+            con.classList.remove("come")
+
+
+        })
+    </script>
+    <!-- &copy;subbus -->
+</body>
+
+</html>

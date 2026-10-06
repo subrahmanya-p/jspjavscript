@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="search">
+    <button onclick="display()">Click ME</button>
+    <p></p>
+    <script>
+        function display(params) {
+
+
+            let data = ["shoes", "car", "bike "]
+            let search = document.getElementById("search");
+            let res = ""
+            search.addEventListener("keyup", (e) => {
+                console.log(e.key);
+                
+                res += e.key;
+            })
+            let ress = data.filter((ele) => {
+
+                ele.startsWith(res)
+
+            })
+            console.log(ress);
+
+        }
+
+        ress.map((e) => {
+            let p = document.createElement("p")
+            p.innerText = e;
+            document.body.appendChild(p)
+
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
