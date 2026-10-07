@@ -12,32 +12,27 @@
     <button onclick="display()">Click ME</button>
     <p></p>
     <script>
-        function display(params) {
+        function display() {
 
 
             let data = ["shoes", "car", "bike "]
             let search = document.getElementById("search");
-            let res = ""
-            search.addEventListener("keyup", (e) => {
-                console.log(e.key);
-                
-                res += e.key;
+            let res = search.value;
+            console.log(res);
+
+            let result = data.filter((ele) => {
+            return    ele.startsWith(res)
             })
-            let ress = data.filter((ele) => {
+            console.log(result);
 
-                ele.startsWith(res)
 
+            result.map((ele)=>{
+                 let p= 
             })
-            console.log(ress);
-
+            
         }
-
-        ress.map((e) => {
-            let p = document.createElement("p")
-            p.innerText = e;
-            document.body.appendChild(p)
-
-        })
+        
+        
 
 
 

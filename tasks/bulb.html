@@ -9,33 +9,20 @@
         integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
-
-
-
-
 </head>
 
 <body>
-
-
-
-
-
-
     <script>
+        
 
         let i = document.createElement("i")
         i.setAttribute("id", "bb")
         i.className = "fa-solid fa-lightbulb"
         document.body.appendChild(i)
-
-        //
         let button = document.createElement("button")
         button.setAttribute("id", "btn")
         button.setAttribute("onclick", "change()")
         document.body.append(button)
-
-        //  
         let bulb = document.getElementById("bb")
         let btn = document.getElementById("btn")
         let ison = false;
@@ -47,6 +34,7 @@
         btn.style.border = "2px solid black";
         btn.innerText = "ON"
         btn.style.color = "white"
+        btn.style.cursor="pointer"
         btn.style.borderRadius = "10px"
         ///
         let change = () => {
@@ -60,25 +48,13 @@
                 btn, statusbar
                 btn.style.color = "white"
                 btn.style.backgroundColor = "red"
-                // btn.style.padding="10px 100px 50px 10px"
-
-
-
-
             } else {
                 bulb.style.color = "grey";
                 ison = true;
                 document.body.style.backgroundColor = "white";
                 btn.style.backgroundColor = "green"
                 btn.innerText = "ON"
-
             }
-
-            l
-
-
-
-
         }
     </script>
 
