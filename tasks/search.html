@@ -15,24 +15,40 @@
         function display() {
 
 
-            let data = ["shoes", "car", "bike "]
+            // let data = ["shoes", "car", "bike " ,"shoes for boys" , "shoes "]
+            let data = [
+                "shoes",
+                "car",
+                "bike",
+                "shoes for boys",
+                "apple",
+                "banana",
+                "shirt",
+                "mobile",
+                "mango",
+                "cat",
+                "school",
+                "dog"
+            ];
             let search = document.getElementById("search");
             let res = search.value;
             console.log(res);
 
             let result = data.filter((ele) => {
-            return    ele.startsWith(res)
+                return ele.trim().toLocaleLowerCase().toLocaleLowerCase().startsWith(res)
             })
             console.log(result);
 
 
-            result.map((ele)=>{
-                 let p= 
+            result.map((ele) => {
+                let p = document.createElement("p")
+                p.innerHTML = ele;
+                document.body.appendChild(p)
             })
-            
+
         }
-        
-        
+
+
 
 
 

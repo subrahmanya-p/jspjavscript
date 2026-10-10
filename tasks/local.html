@@ -4,24 +4,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* min-height: 100vh; */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        #cont {
+            display: flex;
+            width: 80%;
+
+            /* border: 1px solid red; */
+        }
+
+        #first {
+            width: 50%;
+            background-image: url("car.png");
+            /* background-position: center; */
+            background-size: cover;
+            /* background-repeat: no-repeat; */
+        }
+
+        #myform {
+            width: 50%;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            /* min-height: 15px; */
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #submit {
+            background-color: #087f23;
+            color: white;
+        }
+
+        #clear {
+            background-color: #ddd;
+        }
+
+        #success {
+            color: green;
+        }
+
+        .popp {
+            height: 40px;
+            width: 250px;
+            background-color: #087f23;
+            position: absolute;
+            left: 80%;
+            margin-left: 50px;
+            top: -8%;
+            display: flex;
+            border-radius: 10px;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: medium;
+            transition: all 2s ease;
+        }
+
+        .pop {
+            top: 10%;
+            /* background-color: red; */
+        }
+
+        .errmsg {
+            height: 40px;
+            width: 200px;
+            background-color: red;
+            position: absolute;
+            left: 80%;
+            margin-left: 50px;
+            top: -8%;
+            display: flex;
+            border-radius: 10px;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: medium;
+            transition: all 2s ease;
+        }
+
+        .err {
+            top: 10%;
+            /* background-color: red; */
+        }
+    </style>
 </head>
 
 <body>
+    <div class="popp">
+        <p>Succesfully Added !</p>
+    </div>
+    <div class="errmsg">
+        <p></p>
+    </div>
 
-    <form id="myform">
+    <div id="cont">
 
-        <input type="text" id="username">
+        <div id="first"></div>
 
-        <input type="number" id="password">
+        <form id="myform">
 
-        <button type="submit">Submit</button>
+            <h2>Registration Form</h2>
 
-    </form>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+            <p id="usernameerror" class="error"></p>
 
-    <div id="result"></div>
+            <label for="number">Mobile Number</label>
+            <input type="number" id="number" max="9999999999" min="0000000001"
+                placeholder="Enter 10-digit mobile number">
+            <p id="numbererror" class="error"></p>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <p id="emailerror" class="error"></p>
+
+            <label for="firstps">Password</label>
+            <input type="password" id="firstps" placeholder="Enter your password"
+                pattern="[A-Z]{1}[a-z]{3}[!@#$^]{1}[0-9]{3}" title="(1 uppercase 3 lowercae 1 spl symbol 3 digits )">
+            <p id="firstpserror" class="error"></p>
+
+            <!-- Subbu!098 -->
+
+            <label for="secondps">Confirm Password</label>
+            <input type="password" id="secondps" placeholder="Confirm your password"
+                pattern="[A-Z]{1}[a-z]{3}[!@#$^]{1}[0-9]{3}" title="(1 uppercase 3 lowercae 1 spl symbol 3 digits )">
+            <p id="passworderror" class="error"></p>
+
+            <button type="submit" id="submit">Submit</button>
+            <button type="reset" id="clear">Clear</button>
+
+            <h4 id="succes"></h4>
+
+        </form>
+
+    </div>
 
     <script>
+        // location.href = "loader.html"
+        let errmsg = document.querySelector(".errmsg")
+        let pop = document.querySelector(".popp");
+        let succes = document.getElementById("succes")
+        succes.style.color = "green"
+        let emailerror = document.getElementById("emailerror")
+        emailerror.style.color = "red"
+
+        let usererror = document.getElementById("usernameerror");
+        usererror.style.color = "red"
+        let passerror = document.getElementById("passworderror");
+        passerror.style.color = "red"
+        let numbererror = document.getElementById("numbererror");
+        numbererror.style.color = "red"
 
         document.getElementById("myform").addEventListener("submit", (e) => {
 
@@ -30,37 +202,109 @@
             let arr = JSON.parse(localStorage.getItem("userdata")) || [];
 
             let username = document.getElementById("username").value;
+            let number = document.getElementById("number").value;
+            let email = document.getElementById("email").value;
+            let firstps = document.getElementById("firstps").value;
+            let secondps = document.getElementById("secondps").value;
+            console.log(username);
 
-            let password = document.getElementById("password").value;
+            console.log(usererror);
 
-            let obj = {
-                username: username,
-                password: password
-            };
+            if (username.length > 15) {
+                usererror.innerText = "the length is greater than 20";
+                return;
 
-            arr.push(obj);
+            }
+            if (username.length == 0) {
 
-            localStorage.setItem("userdata", JSON.stringify(arr));
+                usererror.innerText = "the length should be greater then 0";
 
-            let data = JSON.parse(localStorage.getItem("userdata"));
+                return;
 
-            let result = document.getElementById("result");
+            }
+            if (number.length != 10) {
 
-            result.innerHTML = "";
+                numbererror.innerText = "The number length should be 10  "
+                return;
+            }
+            if (email.length == 0) {
+                emailerror.innerText = "Please Enter the email"
+                return;
 
-            data.map((ele) => {
+            }
+            if (firstps.length == 0) {
+                passerror.innerText = "please Enter a Pasword"
+                return
+            }
 
-                let p = document.createElement("p");
 
-                p.innerHTML = `Username: ${ele.username} Password: ${ele.password}`;
+            //  if(password.charAt())
+            // if (!(firstps.charAt(0) > 'A' && firstps.charAt() < 'Z')) {
+            //     console.log(firstps.charAt(0));
 
-                result.appendChild(p);
+            //     passerror.innerText = "First Must be Uppercase Character!"
+            //     return
+            // }
 
+
+
+
+            if (firstps != secondps) {
+
+                passerror.innerText = "Pass should match"
+                return;
+
+
+            }
+
+            let exists = arr.some((e) => {
+                return username === e.username;
             });
 
-        });
+            if (exists) {
+                errmsg.classList.add("err");
+                errmsg.innerText = `The User :${username} Already there !`;
 
+                setTimeout(() => {
+                    errmsg.classList.remove("err");
+                }, 2000)
+                return;
+
+            } else {
+                let obj = {
+                    username: username,
+                    number: number,
+                    email: email,
+                    password: firstps
+                };
+                arr.push(obj);
+
+                localStorage.setItem("userdata", JSON.stringify(arr));
+
+                pop.classList.add("pop");
+                console.log(pop);
+
+
+                setTimeout(() => {
+                    pop.classList.remove("pop");
+                }, 2000)
+
+            }
+
+
+            // let succes = document.getElementById("succes")
+            // succes.style.color = "green"
+            // succes.innerText = "Donee"
+            // setTimeout(() => {
+            //     succes.innerText = ""
+            // }, 5000)
+
+
+
+
+        });
     </script>
+
 
 </body>
 

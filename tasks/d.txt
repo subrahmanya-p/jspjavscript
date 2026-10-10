@@ -1,0 +1,46 @@
+
+        // // localStorage.clear()
+        // // let data = JSON.parse(localStorage.getItem("userdata"))||[]
+        // // console.log(data);                                 
+
+        // // data.map((ele) => {
+        // //     let p = document.createElement("p")
+        // //     p.innerHTML = `username:${ele.username}  password :${ele.password}`;
+        // //     document.body.appendChild(p)
+        // // })
+        // document.getElementById("myform").addEventListener("submit", (e) => {
+
+        //     e.preventDefault();
+
+        //     let arr = JSON.parse(localStorage.getItem("userdata")) || [];
+
+        //     let username = document.getElementById("username").value;
+
+        //     let password = document.getElementById("password").value;
+
+        //     let obj = {
+        //         username: username,
+        //         password: password
+        //     };
+        //     arr.map((e) => {
+        //         if (username == e.username) {
+        //             alert("Already exists");
+        //             console.log(e.username);
+        //             return;
+
+        //         }
+        //         else {
+        //             arr.push(obj)
+
+        //         }
+
+        //     }
+        //     )
+
+
+
+        //     //  let p = document.createElement("p")
+        //     //             p.innerHTML = `username:${obj.username}  password :${obj.password}`;
+        //     //             document.body.appendChild(p)
+
+
