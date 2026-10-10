@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #ham {
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 50px;
+            cursor: pointer;
+            transition: ALL 3S ease;
+        }
+
+        .container {
+            height: 500px;
+            width: 400px;
+            background-color: rgb(169, 161, 161);
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            margin-top: 50px;
+            left: -400px;
+            transition: ALL 1S ease;
+        }
+
+        .visible {
+            left: 30px;
+            margin-left: -30px;
+
+        }
+
+        #x {
+            position: absolute;
+            font-size: 50px;
+            /* color: ;// */
+            margin-left: 85%;
+            margin-bottom: 100%;
+            cursor: pointer;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <i id="ham" class="fa-solid fa-bars"></i>
+    <div class="container">
+        <i id="x" class="fa-solid fa-xmark"></i>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Location</li>
+            <li>Collections</li>
+            <li>Careers</li>
+        </ul>
+
+    </div>
+    <script>
+
+        let container = document.querySelector(".container")
+        let ham = document.getElementById("ham")
+        let x = document.getElementById("x")
+
+        ham.addEventListener("click", () => {
+            container.classList.add("visible")
+            ham.style.display = "none"
+
+        })
+        x.addEventListener("click", () => {
+            container.classList.remove("visible")
+            ham.style.display = "block"
+        })
+
+
+
+
+
+
+
+
+
+
+
+        // let container = document.querySelector(".container")
+        // let ham = document.getElementById("ham")
+        // ham.addEventListener("click", () => {
+        //     container.classList.toggle("visible")
+        //     if (ham.className == "fa-solid fa-bars") {
+        //         ham.className = "fa-solid fa-xmark"
+        //     }
+        //     else {
+        //         ham.className = "fa-solid fa-bars"
+
+        //     }
+
+        // })
+
+
+    </script>
+</body>
+
+</html>
