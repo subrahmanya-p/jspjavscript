@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <form action="" method="post">
+
+
+        <input type="text" name="" id="username">
+        <input type="password" name="" id="password">
+        <button type="submit">Submit</button>
+
+        <p></p>
+    </form>
+    <script>
+        let p = document.querySelector("p")
+
+        let data = {
+            username: "subbu",
+            password: "123"
+        }
+        document.querySelector("form").addEventListener("submit", (e) => {
+            e.preventDefault()
+            p.innerText = "pending"
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+
+            let mypromise = new Promise((resolve, reject) => {
+                if (username == data.username && password == data.password) {
+                    setTimeout(() => {
+
+                        return resolve("Succefully Login")
+                    }, 2000)
+                }
+                else {
+                    setTimeout(() => {
+                        reject("Incorrect!")
+
+                    }, 2000)
+                }
+
+
+
+            })
+            mypromise.then((res) => {
+                p.innerText = res
+                p.style.color = "green"
+            }).catch((err) => {
+                p.innerText = err
+                p.style.color = "red"
+            })
+
+            p.style.color = "black"
+        })
+    </script>
+
+</body>
+
+</html>
