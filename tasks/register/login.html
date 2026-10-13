@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* min-height: 100vh; */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #cont {
+            display: flex;
+            width: 80%;
+
+            /* border: 1px solid red; */
+        }
+
+        #first {
+            width: 50%;
+            background-image: url("car.png");
+            /* background-position: center; */
+            background-size: cover;
+            /* background-repeat: no-repeat; */
+        }
+
+        #myform {
+            width: 50%;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            /* min-height: 15px; */
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #submit {
+            background-color: #087f23;
+            color: white;
+        }
+
+        #clear {
+            background-color: #ddd;
+        }
+
+        #success {
+            color: green;
+        }
+
+        .popp {
+            height: 40px;
+            width: 250px;
+            background-color: #087f23;
+            position: absolute;
+            left: 80%;
+            margin-left: 50px;
+            top: -8%;
+            display: flex;
+            border-radius: 10px;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: medium;
+            transition: all 2s ease;
+        }
+
+        .pop {
+            top: 10%;
+            /* background-color: red; */
+        }
+
+        .errmsg {
+            height: 40px;
+            width: 300px;
+            background-color: red;
+            position: absolute;
+            left: 75%;
+
+            margin-left: 50px;
+            top: -6%;
+            display: flex;
+            border-radius: 10px;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: medium;
+            transition: all 2s ease;
+        }
+
+        .err {
+            top: 10%;
+            /* background-color: red; */
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="cont">
+
+        <div id="first"></div>
+
+        <form id="myform">
+
+            <h2>Login here</h2>
+
+            <label for="username">Username Or Email:</label>
+            <input type="text" id="username" placeholder="Enter Your Username Or Email">
+            <p id="usernameerror" class="error"></p>
+
+
+            <label for="firstps">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <p id="passworderror" class="error"></p>
+
+            <button type="submit" id="submit">Submit</button>
+            <button type="reset" id="clear">Clear</button>
+
+            <h4 id="success"></h4>
+
+        </form>
+
+
+    </div>
+    <script>
+        let usernameerror = document.getElementById("usernameerror");
+        usernameerror.style.color = "red"
+        let success = document.getElementById("success")
+        let passworderror = document.getElementById("passworderror");
+        passworderror.style.color = "red"
+        document.getElementById("myform").addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let arr = JSON.parse(localStorage.getItem("userdata")) || [];
+
+            if (username.length == 0) {
+
+                usernameerror.innerText = "the length should be greater then 0";
+
+                return;
+
+            }
+            let exists = arr.some((e) => {
+                return username == e.username || username == e.email
+            });
+            if (!exists) {
+                usernameerror.innerText = "User Not Exists!"
+                return;
+            }
+            let isverified = arr.some((e) => {
+                return username == e.username && password == e.password;
+            });
+            if (!isverified) {
+                passworderror.innerText = "Incorrect Password!"
+                return;
+
+            }
+            success.innerText = "Succesfully Login!"
+            success.style.color = "green";
+
+            localStorage.setItem("username", username)
+            setTimeout(() => {
+
+                window.location.href = "home.html"
+            }, 3000)
+
+
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>

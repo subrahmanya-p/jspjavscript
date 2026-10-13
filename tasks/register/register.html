@@ -67,7 +67,8 @@
         }
 
         #submit {
-            background-color: #087f23;
+            background-color:green;
+            color:black;
             color: white;
         }
 
@@ -109,7 +110,7 @@
             background-color: red;
             position: absolute;
             left: 75%;
-            
+
             margin-left: 50px;
             top: -6%;
             display: flex;
@@ -181,7 +182,7 @@
     </div>
 
     <script>
-        // location.href = "loader.html"
+
         let errmsg = document.querySelector(".errmsg")
         let pop = document.querySelector(".popp");
         let succes = document.getElementById("succes")
@@ -206,9 +207,7 @@
             let email = document.getElementById("email").value;
             let firstps = document.getElementById("firstps").value;
             let secondps = document.getElementById("secondps").value;
-            console.log(username);
 
-            console.log(usererror);
 
             if (username.length > 15) {
                 usererror.innerText = "the length is greater than 20";
