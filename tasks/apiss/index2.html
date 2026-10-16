@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: green;
+        }
+
+        h2 {
+            color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <h2></h2>
+
+
+    <script>
+
+        function fetchImage() {
+
+
+
+            let h1 = document.querySelector("h1")
+
+            let h2 = document.querySelector("h2")
+            let mypromise = new Promise((resolve, reject) => {
+                let data = fetch("https://official-joke-api.appspot.com/random_joke")
+                data.then((item) => {
+                    item.json().then((e) => {
+                        resolve(e)
+
+                    })
+
+                }).catch(() => {
+                    reject("Something went wrong")
+                })
+
+            })
+            mypromise.then((data) => {
+                h1.innerText = data.setup
+                h2.innerText = data.punchline
+
+
+
+
+            })
+        }
+
+        setInterval(() => {
+            fetchImage()
+        }, 2000)
+    </script>
+</body>
+
+</html>

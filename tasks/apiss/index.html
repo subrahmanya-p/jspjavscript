@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+        }
+        img{
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="" alt="" height="400px" width="400px">
+    <script>
+
+        function fetchImage() {
+
+
+            let mypromise = new Promise((resolve, reject) => {
+                let data = fetch("https://dog.ceo/api/breeds/image/random"
+                )
+                data.then((item) => {
+                    item.json().then((e) => {
+                        resolve(e)
+
+                    })
+
+                }).catch(() => {
+                    reject("Something went wrong")
+                })
+
+            })
+            mypromise.then((data) => {
+                let img = document.querySelector("img")
+                img.src = data.message;
+
+            })
+        }
+
+        setInterval(() => {
+            fetchImage()
+        }, 2000)
+    </script>
+</body>
+
+</html>

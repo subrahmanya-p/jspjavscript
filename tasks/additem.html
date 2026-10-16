@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="data">
+        <p id="error"></p>
+        <button type="submit">Add</button>
+    </form>
+
+    <div id="dis"></div>
+
+    <script>
+        let error = document.getElementById("error");
+        let dis = document.getElementById("dis");
+
+
+        error.style.color = "red";
+
+        function deletedata(e) {
+            dis.innerHTML = "";
+
+            let arr = JSON.parse(localStorage.getItem("data")) || []
+            arr = arr.filter((ele, index) => {
+                return index != e;
+
+            }
+            )
+            localStorage.setItem("data", JSON.stringify(arr));
+            dis.innerHTML = arr.map((ele, index) => {
+                return `
+                <div>
+                    <p>${ele}</p>
+                    <button onclick="deletedata('${index}')">Delete </button>
+                </div>`
+            }).join("")
+        }
+
+
+        ////
+        let arr = JSON.parse(localStorage.getItem("data")) || []
+        dis.innerHTML = arr.map((ele, index) => {
+            return `
+                <div>
+                    <p>${ele}</p>
+                    <button onclick="deletedata('${index}')">Delete </button>
+                     
+                </div>`
+        }).join("")
+
+
+        document.querySelector("form").addEventListener("submit", (e) => {
+            let data = document.getElementById("data").value;
+            e.preventDefault();
+
+            if (data.length == 0) {
+                error.innerText = "Please Enter Some data!";
+                return;
+            }
+
+            error.innerText = "";
+
+            let arr = JSON.parse(localStorage.getItem("data")) || [];
+
+            arr.push(data);
+            localStorage.setItem("data", JSON.stringify(arr));
+            dis.innerHTML = "";
+            dis.innerHTML = arr.map((ele, index) => {
+                return `
+                <div>
+                    <p>${ele}</p>
+                    <button onclick="deletedata('${index}')">Delete </button>
+
+                </div>`
+            }).join("")
+        });
+    </script>
+</body>
+
+</html>

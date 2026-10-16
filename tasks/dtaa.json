@@ -1,0 +1,452 @@
+[
+    {
+        "id": 1,
+        "name": "iPhone 16",
+        "category": "Electronics",
+        "price": 69999,
+        "rating": 4.8,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product1/300/200"
+    },
+    {
+        "id": 2,
+        "name": "Samsung Galaxy S24",
+        "category": "Electronics",
+        "price": 59999,
+        "rating": 4.7,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product2/300/200"
+    },
+    {
+        "id": 3,
+        "name": "OnePlus 12",
+        "category": "Electronics",
+        "price": 54999,
+        "rating": 4.6,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product3/300/200"
+    },
+    {
+        "id": 4,
+        "name": "Redmi Note 13",
+        "category": "Electronics",
+        "price": 17999,
+        "rating": 4.3,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product4/300/200"
+    },
+    {
+        "id": 5,
+        "name": "Google Pixel 8",
+        "category": "Electronics",
+        "price": 49999,
+        "rating": 4.5,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product5/300/200"
+    },
+    {
+        "id": 6,
+        "name": "HP Pavilion Laptop",
+        "category": "Computers",
+        "price": 62999,
+        "rating": 4.4,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product6/300/200"
+    },
+    {
+        "id": 7,
+        "name": "Dell Inspiron Laptop",
+        "category": "Computers",
+        "price": 57999,
+        "rating": 4.2,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product7/300/200"
+    },
+    {
+        "id": 8,
+        "name": "MacBook Air",
+        "category": "Computers",
+        "price": 99999,
+        "rating": 4.9,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product8/300/200"
+    },
+    {
+        "id": 9,
+        "name": "Lenovo IdeaPad",
+        "category": "Computers",
+        "price": 45999,
+        "rating": 4.1,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product9/300/200"
+    },
+    {
+        "id": 10,
+        "name": "Asus VivoBook",
+        "category": "Computers",
+        "price": 51999,
+        "rating": 4.3,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product10/300/200"
+    },
+    {
+        "id": 11,
+        "name": "Sony Headphones",
+        "category": "Accessories",
+        "price": 7999,
+        "rating": 4.6,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product11/300/200"
+    },
+    {
+        "id": 12,
+        "name": "Boat Earbuds",
+        "category": "Accessories",
+        "price": 1499,
+        "rating": 4.2,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product12/300/200"
+    },
+    {
+        "id": 13,
+        "name": "JBL Bluetooth Speaker",
+        "category": "Accessories",
+        "price": 3499,
+        "rating": 4.5,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product13/300/200"
+    },
+    {
+        "id": 14,
+        "name": "Logitech Mouse",
+        "category": "Accessories",
+        "price": 899,
+        "rating": 4.4,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product14/300/200"
+    },
+    {
+        "id": 15,
+        "name": "Mechanical Keyboard",
+        "category": "Accessories",
+        "price": 2999,
+        "rating": 4.6,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product15/300/200"
+    },
+    {
+        "id": 16,
+        "name": "Nike Running Shoes",
+        "category": "Fashion",
+        "price": 4999,
+        "rating": 4.5,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product16/300/200"
+    },
+    {
+        "id": 17,
+        "name": "Adidas Sneakers",
+        "category": "Fashion",
+        "price": 3999,
+        "rating": 4.4,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product17/300/200"
+    },
+    {
+        "id": 18,
+        "name": "Puma T-Shirt",
+        "category": "Fashion",
+        "price": 999,
+        "rating": 4.1,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product18/300/200"
+    },
+    {
+        "id": 19,
+        "name": "Levi's Jeans",
+        "category": "Fashion",
+        "price": 2499,
+        "rating": 4.3,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product19/300/200"
+    },
+    {
+        "id": 20,
+        "name": "Casual Jacket",
+        "category": "Fashion",
+        "price": 2999,
+        "rating": 4.2,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product20/300/200"
+    },
+    {
+        "id": 21,
+        "name": "Wrist Watch",
+        "category": "Fashion",
+        "price": 1999,
+        "rating": 4.0,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product21/300/200"
+    },
+    {
+        "id": 22,
+        "name": "Leather Wallet",
+        "category": "Fashion",
+        "price": 799,
+        "rating": 4.1,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product22/300/200"
+    },
+    {
+        "id": 23,
+        "name": "Sunglasses",
+        "category": "Fashion",
+        "price": 1299,
+        "rating": 4.2,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product23/300/200"
+    },
+    {
+        "id": 24,
+        "name": "Travel Backpack",
+        "category": "Fashion",
+        "price": 1799,
+        "rating": 4.4,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product24/300/200"
+    },
+    {
+        "id": 25,
+        "name": "Cricket Bat",
+        "category": "Sports",
+        "price": 2499,
+        "rating": 4.5,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product25/300/200"
+    },
+    {
+        "id": 26,
+        "name": "Football",
+        "category": "Sports",
+        "price": 899,
+        "rating": 4.3,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product26/300/200"
+    },
+    {
+        "id": 27,
+        "name": "Yoga Mat",
+        "category": "Sports",
+        "price": 699,
+        "rating": 4.2,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product27/300/200"
+    },
+    {
+        "id": 28,
+        "name": "Dumbbell Set",
+        "category": "Sports",
+        "price": 2999,
+        "rating": 4.6,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product28/300/200"
+    },
+    {
+        "id": 29,
+        "name": "Badminton Racket",
+        "category": "Sports",
+        "price": 1599,
+        "rating": 4.4,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product29/300/200"
+    },
+    {
+        "id": 30,
+        "name": "Water Bottle",
+        "category": "Home",
+        "price": 399,
+        "rating": 4.1,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product30/300/200"
+    },
+    {
+        "id": 31,
+        "name": "Coffee Maker",
+        "category": "Home",
+        "price": 2499,
+        "rating": 4.3,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product31/300/200"
+    },
+    {
+        "id": 32,
+        "name": "Electric Kettle",
+        "category": "Home",
+        "price": 1299,
+        "rating": 4.5,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product32/300/200"
+    },
+    {
+        "id": 33,
+        "name": "Table Lamp",
+        "category": "Home",
+        "price": 899,
+        "rating": 4.0,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product33/300/200"
+    },
+    {
+        "id": 34,
+        "name": "Air Purifier",
+        "category": "Home",
+        "price": 8999,
+        "rating": 4.6,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product34/300/200"
+    },
+    {
+        "id": 35,
+        "name": "Office Chair",
+        "category": "Furniture",
+        "price": 6999,
+        "rating": 4.4,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product35/300/200"
+    },
+    {
+        "id": 36,
+        "name": "Study Table",
+        "category": "Furniture",
+        "price": 4999,
+        "rating": 4.2,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product36/300/200"
+    },
+    {
+        "id": 37,
+        "name": "Bookshelf",
+        "category": "Furniture",
+        "price": 3499,
+        "rating": 4.3,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product37/300/200"
+    },
+    {
+        "id": 38,
+        "name": "Sofa",
+        "category": "Furniture",
+        "price": 24999,
+        "rating": 4.7,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product38/300/200"
+    },
+    {
+        "id": 39,
+        "name": "Dining Table",
+        "category": "Furniture",
+        "price": 12999,
+        "rating": 4.5,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product39/300/200"
+    },
+    {
+        "id": 40,
+        "name": "Blender",
+        "category": "Kitchen",
+        "price": 1999,
+        "rating": 4.2,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product40/300/200"
+    },
+    {
+        "id": 41,
+        "name": "Microwave Oven",
+        "category": "Kitchen",
+        "price": 8999,
+        "rating": 4.5,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product41/300/200"
+    },
+    {
+        "id": 42,
+        "name": "Air Fryer",
+        "category": "Kitchen",
+        "price": 5999,
+        "rating": 4.4,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product42/300/200"
+    },
+    {
+        "id": 43,
+        "name": "Toaster",
+        "category": "Kitchen",
+        "price": 1499,
+        "rating": 4.1,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product43/300/200"
+    },
+    {
+        "id": 44,
+        "name": "Pressure Cooker",
+        "category": "Kitchen",
+        "price": 1799,
+        "rating": 4.3,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product44/300/200"
+    },
+    {
+        "id": 45,
+        "name": "Digital Camera",
+        "category": "Electronics",
+        "price": 45999,
+        "rating": 4.6,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product45/300/200"
+    },
+    {
+        "id": 46,
+        "name": "Smart Watch",
+        "category": "Electronics",
+        "price": 4999,
+        "rating": 4.3,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product46/300/200"
+    },
+    {
+        "id": 47,
+        "name": "Power Bank",
+        "category": "Accessories",
+        "price": 1499,
+        "rating": 4.2,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product47/300/200"
+    },
+    {
+        "id": 48,
+        "name": "External SSD",
+        "category": "Computers",
+        "price": 6999,
+        "rating": 4.7,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product48/300/200"
+    },
+    {
+        "id": 49,
+        "name": "Gaming Controller",
+        "category": "Gaming",
+        "price": 3999,
+        "rating": 4.5,
+        "inStock": false,
+        "image": "https://picsum.photos/seed/product49/300/200"
+    },
+    {
+        "id": 50,
+        "name": "Gaming Monitor",
+        "category": "Gaming",
+        "price": 18999,
+        "rating": 4.8,
+        "inStock": true,
+        "image": "https://picsum.photos/seed/product50/300/200"
+    }
+]

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="datas"></h1>
+    <script>
+        function fetchData() {
+            let datas = document.getElementById("datas")
+
+            let mypromise = new Promise((resolve, reject) => {
+                let data = fetch("https://api.adviceslip.com/advice")
+                data.then((item) => {
+                    item.json().then((e) => {
+                        resolve(e)
+
+                    })
+
+                }).catch(() => {
+                    reject("Something went wrong")
+                })
+
+            })
+            mypromise.then((data) => {
+
+                datas.innerText = data.slip.advice
+            })
+        }
+        setInterval(() => {
+
+            fetchData()
+        }, 2000);
+    </script>
+</body>
+
+</html>

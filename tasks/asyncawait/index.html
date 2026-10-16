@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        img {
+            border-radius: 20px;
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+                                                                   
+<body>
+    <h1></h1>
+
+    <script>
+
+
+
+        async function fetchData() {
+            try {
+                let res = await fetch("https://dog.ceo/api/breeds/image/random")
+                let data = await res.json()
+                let img = document.createElement("img")
+                img.src = data.message;
+                document.body.appendChild(img)
+
+            } catch (error) {
+                document.querySelector("h1").innerText = error
+
+
+            }
+
+
+        }
+        setInterval(() => {
+
+            fetchData()
+        }, 3000);
+
+
+
+
+
+
+
+
+
+        function product() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("product")
+
+                }, 3000);
+
+            })
+
+        }
+        function details() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("details")
+
+                }, 4000);
+
+            })
+
+        }
+        function cart() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("cart")
+
+                }, 1000);
+
+            })
+
+        }
+        async function userddat() {
+
+            try {
+                console.log("start");
+                let product1 = await product();
+                console.log(product1);
+
+                let details1 = await details();
+                console.log(details1);
+
+                let cart1 = await cart();
+                console.log(cart1);
+                console.log("end");
+            } catch (error) {
+
+            }
+
+
+
+
+
+
+        }
+        userddat()
+    </script>
+</body>
+
+</html>
