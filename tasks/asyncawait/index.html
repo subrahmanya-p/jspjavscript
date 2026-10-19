@@ -9,19 +9,26 @@
         body {
             height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+ 
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            /* flex-direction: column; */
 
         }
 
         img {
             border-radius: 20px;
-            height: 400px;
-            width: 400px;
+            height: 100px;
+            width: 100px;
+            transition: all 1s ease;
         }
+         img:hover{
+            transform: scale(1.4);
+         }
     </style>
 </head>
-                                                                   
+
 <body>
     <h1></h1>
 
@@ -48,7 +55,7 @@
         setInterval(() => {
 
             fetchData()
-        }, 3000);
+        }, 1000);
 
 
 
