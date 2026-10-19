@@ -61,8 +61,17 @@
 import data from "./dtaa.json" with { type: "json"};
 
 data.map((ele) => {
-    console.log(ele);
-    
+    console.log(ele.id);
+    console.log(ele.name);
+    console.log(ele.price);
+    console.log(ele.rating);
+    console.log(ele.category);
+    console.log(ele.inStock);
+
+
+    console.log("---------------");
+
+
 })
 
 
