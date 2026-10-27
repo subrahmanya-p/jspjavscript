@@ -23,6 +23,35 @@
 
         error.style.color = "red";
 
+        function updatedata(e) {
+            let arr = JSON.parse(localStorage.getItem("data")) || [];
+
+            let data = document.getElementById("data");
+            data.value = arr[e]; // Show selected value in input
+            arr = arr.filter((ele, index) => {
+                return index != e;
+
+            })
+
+
+
+            arr[e] = data.value;
+
+
+            localStorage.setItem("data", JSON.stringify(arr));
+
+
+            dis.innerHTML = arr.map((ele, index) => {
+                return `
+            <div>
+                <p>${ele}</p>
+                <button onclick="deletedata(${index})">Delete</button>
+                <button onclick="updatedata(${index})">Update</button>
+            </div>
+        `;
+            }).join("");
+        }
+
         function deletedata(e) {
             dis.innerHTML = "";
 
@@ -38,6 +67,7 @@
                 <div>
                     <p>${ele}</p>
                     <button onclick="deletedata('${index}')">Delete </button>
+                     <button onclick="updatedata('${index}')">Update </button>
                 </div>`
             }).join("")
         }
@@ -50,6 +80,7 @@
                 <div>
                     <p>${ele}</p>
                     <button onclick="deletedata('${index}')">Delete </button>
+                     <button onclick="updatedata('${index}')">Update </button>
                      
                 </div>`
         }).join("")
@@ -70,12 +101,15 @@
 
             arr.push(data);
             localStorage.setItem("data", JSON.stringify(arr));
+
+
             dis.innerHTML = "";
             dis.innerHTML = arr.map((ele, index) => {
                 return `
                 <div>
                     <p>${ele}</p>
                     <button onclick="deletedata('${index}')">Delete </button>
+                    <button onclick="updatedata('${index}')">Update </button>
 
                 </div>`
             }).join("")

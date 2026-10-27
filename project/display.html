@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-evenly;
+            font-family: sans-serif;
+            margin-top: 10px;
+        }
+
+        .product {
+            height: 300px;
+            width: 300px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            background-color: azure;
+            border-radius: 20px;
+
+        }
+
+        img {
+            height: 30%;
+            width: 30%;
+        }
+
+        input {
+            height: 30px;
+            margin-top: 20px;
+            margin-left: 50px;
+            width: 300px;
+        }
+
+        .cart {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart button {
+            margin-left: 4px;
+            padding: 7px 25px;
+            /* margin-bottom: 20px; */
+            background-color: green;
+            bottom: none;
+            color: white;
+            font-size: medium;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 5px;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .cart {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text">
+    <a href="C:\Users\gowda\OneDrive\Desktop\projetc\cart.html">Cart</a>
+    <div class="container"></div>
+
+    <script>
+        function RemoveCart(e) {
+
+            let cartarr = JSON.parse(localStorage.getItem("cart")) || []
+            cartarr = cartarr.filter((value) => {
+                return value.id != e;
+            })
+            localStorage.setItem("cart", JSON.stringify(cartarr))
+
+            window.navigation.reload()
+        }
+
+
+        let data = []
+        let container = document.querySelector(".container");
+
+
+        function isPresentInCart(e) {
+
+            let cartarr = JSON.parse(localStorage.getItem("cart")) || []
+            isPresent = cartarr.some((ele) => {
+                return ele.id == e;
+            })
+
+
+            return isPresent;
+
+        }
+
+        function displayData(dataArr) {
+
+            container.innerHTML = dataArr.map((ele) => {
+                return `<div class="product">
+                    <h2>${ele.title.substring(0, 10)}</h2>
+                            <img src="${ele.image}" alt="Product" >
+                            <p>$${ele.price}</p>
+                            <p>${ele.category}</p>
+                            <p>${ele.description.substring(0, 90)}</p>
+                             <div class="cart">
+                            <p>Rating: ${ele.rating.rate} ⭐</p>
+                            ${isPresentInCart(ele.id) ?
+                        `  <button  onclick="RemoveCart('${ele.id}')"> Delete </button> ` :
+                        `   <button  onclick="addTocart('${ele.id}')"> Add </button>`
+                    }       </div>
+                    </div>
+    `;
+            }).join("");
+
+        }
+        async function fetchData(params) {
+            let res = await fetch("https://fakestoreapi.com/products")
+            data = await res.json();
+            displayData(data)
+
+
+        }
+        fetchData();
+        function addTocart(e) {
+            console.log(e);
+
+            let cartarr = JSON.parse(localStorage.getItem("cart")) || []
+
+            let element = data.find((value, inddex) => {
+                return e == value.id;
+
+            })
+            cartarr.push(element)
+            localStorage.setItem("cart", JSON.stringify(cartarr))
+            window.navigation.reload()
+        }
+
+        document.querySelector("input").addEventListener("input", (e) => {
+            container.innerHTML = ""
+
+            let filtereddata = data.filter((ele) => {
+                return ele.title.toLowerCase().startsWith(e.target.value.toLowerCase())
+            })
+
+            console.log(filtereddata);
+
+            displayData(filtereddata)
+        })
+
+    </script>
+</body>
+
+</html>

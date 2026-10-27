@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-evenly;
+            font-family: sans-serif;
+            margin-top: 10px;
+        }
+
+        .product {
+            height: 300px;
+            width: 300px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            background-color: azure;
+            border-radius: 20px;
+
+        }
+
+        img {
+            height: 30%;
+            width: 30%;
+        }
+
+
+        .cart button {
+            margin-left: 4px;
+            padding: 7px 25px;
+            /* margin-bottom: 20px; */
+            background-color: green;
+            bottom: none;
+            color: white;
+            font-size: medium;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 5px;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .cart {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="C:\Users\gowda\OneDrive\Desktop\projetc\display.html">Display</a>
+    <div class="container">
+
+
+    </div>
+</body>
+<script>
+
+   
+
+
+    let container = document.querySelector(".container");
+
+    function displayData(dataArr) {
+
+        container.innerHTML = dataArr.map((ele) => {
+            return `<div class="product">
+                    <h2>${ele.title.substring(0, 10)}</h2>
+                            <img src="${ele.image}" alt="Product" >
+                            <p>$${ele.price}</p>
+                            <p>${ele.category}</p>
+                            <p>${ele.description.substring(0, 90)}</p>
+                             <div class="cart">
+                            <p>Rating: ${ele.rating.rate} ⭐</p>
+                           
+                          <button  onclick="RemoveCart('${ele.id}')"> Delete </button>
+                            </div>
+                    </div>
+    `;
+        }).join("");
+
+    }
+
+
+    function RemoveCart(e) {
+        container.innerHTML = ""
+
+        let cartarr = JSON.parse(localStorage.getItem("cart")) || []
+        cartarr = cartarr.filter((value) => {
+            return value.id != e;
+
+
+        })
+        localStorage.setItem("cart", JSON.stringify(cartarr))
+        displayData(cartarr)
+
+    }
+    let cartarr = JSON.parse(localStorage.getItem("cart")) || []
+    displayData(cartarr)
+
+</script>
+
+</html>

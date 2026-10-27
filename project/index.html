@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dis {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" height="50px" width="50px">
+    <div class="dis"></div>
+    <script>
+        let data = ["sss", "ee", "abcc", "xxx", "mmm"]
+        let input = document.querySelector("input")
+        let dis = document.querySelector(".dis")
+        data.map((ele) => {
+            let p = document.createElement("p")
+            p.innerText = ele;
+            dis.appendChild(p)
+        }).join("")
+        input.addEventListener("input", (e) => {
+            dis.innerHTML = ""
+            let filtereddata = data.filter((ele) => {
+                return ele.includes(e.target.value)
+            })
+            filtereddata.map((ele) => {
+                let p = document.createElement("p")
+                p.innerText = ele;
+                dis.appendChild(p)
+
+            }).join("")
+        })
+
+    </script>
+</body>
+
+</html>
